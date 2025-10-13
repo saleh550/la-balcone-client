@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import MenuLayout from "../layout/menu-layout/MenuLayout";
 import MainCategories from "../pages/MainCategories";
+import MenuItems from "../pages/MenuItems";
 // import AppLayout from "../layout/appLayout";
 // import Home from "../pages/home/home";
 // // import DetailsForm from "../pages/details/DetailsForm";
@@ -24,10 +25,19 @@ const router = createBrowserRouter([
                 path: "",
                 element:
                     // <PrivateRoute>
-                        <MainCategories />
-                    // </PrivateRoute>
+                    <MainCategories />
+                // </PrivateRoute>
                 ,
+
             },
+            {
+                path: "/menu-items/:id",
+                element:
+                    // <PrivateRoute>
+                    <MenuItems />
+                // </PrivateRoute>
+                ,
+            }
             // {
             //     path: "/build/management",
             //     element:

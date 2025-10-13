@@ -2,26 +2,21 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import type { MainCategoryType } from '../../types/types';
 import { useLanguage } from '../../store/useLanguage';
+import { getName } from '../../utils/utils';
+import { Navigate, useNavigate } from 'react-router-dom';
 interface MainCategoriesCardProps {
     cat: MainCategoryType;
     index: number;
 }
 const MainCategoriesCard: React.FC<MainCategoriesCardProps> = ({ cat, index }) => {
     const { currentLanguage } = useLanguage();
-    const getName = () => {
-
-        if (currentLanguage === "en") {
-            return cat.englishName;
-        } else if (currentLanguage === "ar") {
-            return cat.arabicName;
-        } else {
-            return cat.hebrewName;
-        }
+    const navigate = useNavigate();
+    const onCardClick =()=>{
+        //navigate to menu items page with category id
+        navigate(`/menu-items/${cat.id}`);
     }
-
-
     return (
-        <div data-aos="fade-up" data-aos-delay={(index * 200).toString()} >
+        <div onClick={onCardClick} data-aos="fade-up" data-aos-delay={(index * 200).toString()} >
 
             <motion.div
                 key={index}
@@ -31,13 +26,13 @@ const MainCategoriesCard: React.FC<MainCategoriesCardProps> = ({ cat, index }) =
             >
                 <img
                     src={cat.image}
-                    alt={getName()}
+                    alt={getName(currentLanguage,cat)}
                     className="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:brightness-75 transition-all duration-300"
                 />
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-300"></div>
                 <div className="absolute bottom-3 text-start px-4 w-full">
                     <h3 className="text-white text-lg md:text-xl font-semibold drop-shadow-lg">
-                        {getName()}
+                        {getName(currentLanguage,cat)}
                     </h3>
                 </div>
             </motion.div>
