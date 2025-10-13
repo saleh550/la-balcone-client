@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@tailwind utilities;
+body {
+  /* background-image: url('https://media1.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3dzJ5aXc5a2hib3NscHZxbmZ0bnhmcmFhMWh3bHM4anl3dzVuaXM4ZSZlcD12MV9naWZzX3RyZW5kaW5nJmN0PWc/ClissYbqdxpHxquUme/giphy.webp'); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* optional, for parallax-like effect */
+}
+@theme {
+  /* ☀️ Sunny (Primary Accent - Egg Yolk / Morning Sun) */
+  --color-sunny-100: oklch(0.98 0.02 95);
+  --color-sunny-200: oklch(0.94 0.07 95);
+  --color-sunny-300: oklch(0.90 0.12 95);
+  --color-sunny-400: oklch(0.85 0.18 95);
+  --color-sunny-500: oklch(0.78 0.21 95);
+  --color-sunny-600: oklch(0.65 0.19 95);
+
+  /* 🥐 Cream (Background / Neutral base) */
+  --color-cream-100: oklch(0.99 0.01 85);
+  --color-cream-200: oklch(0.97 0.02 85);
+  --color-cream-300: oklch(0.95 0.03 85);
+  --color-cream-400: oklch(0.92 0.04 85);
+  --color-cream-500: oklch(0.89 0.05 85);
+  --color-cream-600: oklch(0.80 0.07 85);
+
+  /* ☕ Coffee (Text / Contrast / Buttons) */
+  --color-coffee-100: oklch(0.95 0.01 50);
+  --color-coffee-200: oklch(0.85 0.03 50);
+  --color-coffee-300: oklch(0.70 0.05 50);
+  --color-coffee-400: oklch(0.55 0.07 50);
+  --color-coffee-500: oklch(0.45 0.09 50);
+  --color-coffee-600: oklch(0.35 0.11 50);
+
+  /* 🍓 Berry (Secondary Accent - Fresh fruits / highlights) */
+  --color-berry-100: oklch(0.98 0.03 10);
+  --color-berry-200: oklch(0.92 0.07 10);
+  --color-berry-300: oklch(0.85 0.12 10);
+  --color-berry-400: oklch(0.75 0.18 10);
+  --color-berry-500: oklch(0.65 0.22 10);
+  --color-berry-600: oklch(0.55 0.23 10);
+
+  /* 🥑 Avocado (Fresh green, accent complement) */
+  --color-avocado-100: oklch(0.99 0 0);
+  --color-avocado-200: oklch(0.98 0.04 113.22);
+  --color-avocado-300: oklch(0.94 0.11 115.03);
+  --color-avocado-400: oklch(0.92 0.19 114.08);
+  --color-avocado-500: oklch(0.84 0.18 117.33);
+  --color-avocado-600: oklch(0.53 0.12 118.34);
+}
