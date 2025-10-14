@@ -10,7 +10,7 @@ const MainCategoriesHeader: React.FC<MainCategoriesHeaderProps> = ({ children })
   // const { t } = useTranslation();
   return (
     <div>
-      <section className="py-16 bg-gradient-to-b from-slate-50 via-slate-100 to-slate-200 relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-b  relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 text-center">
 
           {/* Elegant Animated Title */}

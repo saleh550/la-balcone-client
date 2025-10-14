@@ -1,15 +1,21 @@
+import ScrollToTop from '../../components/customs/ScrollToTop'
+import MenuFooter from './MenuFooter'
 import MenuHeader from './MenuHeader'
 import { Outlet } from 'react-router-dom'
 
 const MenuLayout = () => {
   return (
-    <div className="min-h-screen ">
+    <>
+    <div className="min-h-svh ">
       <MenuHeader />
       {/* add padding to push outlet below fixed header */}
       <main className="pt-[72px]">
+        <ScrollToTop />
         <Outlet />
       </main>
     </div>
+      <MenuFooter />
+    </>
     // <div className="relative min-h-screen bg-gray-200 overflow-hidden">
     //   {/* Fixed Header */}
 
