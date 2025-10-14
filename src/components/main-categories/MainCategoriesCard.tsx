@@ -3,7 +3,7 @@ import React from 'react'
 import type { MainCategoryType } from '../../types/types';
 import { useLanguage } from '../../store/useLanguage';
 import { getName } from '../../utils/utils';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 interface MainCategoriesCardProps {
     cat: MainCategoryType;
     index: number;
@@ -11,7 +11,7 @@ interface MainCategoriesCardProps {
 const MainCategoriesCard: React.FC<MainCategoriesCardProps> = ({ cat, index }) => {
     const { currentLanguage } = useLanguage();
     const navigate = useNavigate();
-    const onCardClick =()=>{
+    const onCardClick = () => {
         //navigate to menu items page with category id
         navigate(`/menu-items/${cat.id}`);
     }
@@ -26,13 +26,13 @@ const MainCategoriesCard: React.FC<MainCategoriesCardProps> = ({ cat, index }) =
             >
                 <img
                     src={cat.image}
-                    alt={getName(currentLanguage,cat)}
+                    alt={getName(currentLanguage, cat)}
                     className="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:brightness-75 transition-all duration-300"
                 />
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-300"></div>
                 <div className="absolute bottom-3 text-start px-4 w-full">
                     <h3 className="text-white text-lg md:text-xl font-semibold drop-shadow-lg">
-                        {getName(currentLanguage,cat)}
+                        {getName(currentLanguage, cat)}
                     </h3>
                 </div>
             </motion.div>
