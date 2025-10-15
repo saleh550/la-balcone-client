@@ -11,14 +11,17 @@ export type MenuItemType = {
   englishName: string;
   hebrewName: string;
   arabicName: string;
-  description: string;
+  englishDescription: string;
+  hebrewDescription: string;
+  arabicDescription: string;
   image: string;
   price: number;
   isAvailable: boolean;
   isPublished: boolean;
   isWithMilk: boolean;
   isVegan: boolean;
-  isGlutenFree: boolean;
+  isWithGluten: boolean;
+  status:string
 };
 export type SubCategoryType = {
   id: string;
