@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from "framer-motion";
 import type { MenuItemType } from '../../types/types';
 import { useLanguage } from '../../store/useLanguage';
@@ -10,7 +10,7 @@ interface MenuItemCardProps {
     isOpen: boolean
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
-const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, index, isOpen,
+const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, index,
     setIsOpen }) => {
         const {setSelectedMenuItem} = useSubCategories();
     const { currentLanguage } = useLanguage();
