@@ -27,7 +27,7 @@ const MainCategoriesCard: React.FC<MainCategoriesCardProps> = ({ cat, index }) =
                 <img
                     src={cat.image}
                     alt={getName(currentLanguage, cat)}
-                    className="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:brightness-75 transition-all duration-300"
+                    className="w-full h-36 sm:h-48 md:h-56 object-cover group-hover:brightness-75 transition-all duration-300"
                 />
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-300"></div>
                 <div className="absolute bottom-3 text-start px-4 w-full">

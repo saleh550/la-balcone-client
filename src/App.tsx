@@ -6,7 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import './App.css'
 function App() {
-  AOS.init({once:false});
+  AOS.init();
   
   // const queryClient = new QueryClient();
   return (

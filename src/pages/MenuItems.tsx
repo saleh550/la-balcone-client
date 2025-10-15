@@ -18,7 +18,7 @@ const MenuItems: FC<MenuItemsProps> = () => {
   const { id } = useParams();
   const { categories } = useMainCategories();
   const [category, setCategory] = useState<MainCategoryType>();
-  const {selectedMenuItem}=useSubCategories();
+  const { selectedMenuItem } = useSubCategories();
   const { currentLanguage } = useLanguage()
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
@@ -34,7 +34,7 @@ const MenuItems: FC<MenuItemsProps> = () => {
     {category && <Title title={getName(currentLanguage, category)} />}
     <MenuItemsList isOpen={isOpen} setIsOpen={
       setIsOpen} />
-    <Modal title={getName(currentLanguage,selectedMenuItem)} isOpen={isOpen} setIsOpen={setIsOpen}>
+    <Modal title={selectedMenuItem && getName(currentLanguage, selectedMenuItem)} isOpen={isOpen} setIsOpen={setIsOpen}>
       <MenuItemDetails />
     </Modal>
   </>

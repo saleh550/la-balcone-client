@@ -16,6 +16,7 @@ interface MenuItemDetailsProps {
 const MenuItemDetails: FC<MenuItemDetailsProps> = ({ }) => {
     const {currentLanguage}=useLanguage();
     const { selectedMenuItem: item } = useSubCategories();
+    if (!item) return null;
     return (
         <div className="flex flex-col md:flex-row gap-6">
             {/* 🖼️ Image Section */}

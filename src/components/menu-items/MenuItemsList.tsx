@@ -13,19 +13,25 @@ const MenuItemsList: FC<MenuItemsListProps> = ({ isOpen
     , setIsOpen }) => {
     const { id } = useParams<{ id: string }>();
     const { categories } = useMainCategories();
-    const { subCategories, menuItems, setMenuItems, setSubCategories } = useSubCategories();
+    const { subCategories, menuItems, setMenuItems } = useSubCategories();
     const { currentLanguage } = useLanguage()
     useEffect(() => {
         const category = categories.find(cat => cat.id === id);
+            console.log("category",category);
+
         if (category) {
             const filteredSubCategories = subCategories.filter(
                 (subCat) => subCat.categoryId === id
             );
-            setSubCategories(filteredSubCategories);
+            console.log("subCategories",subCategories);
+            console.log("filteredSubCategories",filteredSubCategories);
             const allItems = filteredSubCategories.flatMap((sub) => sub.menuItems);
+            console.log("all items",allItems);
+            
             setMenuItems(allItems);
         }
     }, [id]);
+
     return (
         <div data-aos={currentLanguage == 'en' ? "fade-right" : "fade-left"} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
             {menuItems?.map((item, index) => (

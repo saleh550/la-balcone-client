@@ -18,6 +18,8 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, index,
         setSelectedMenuItem(item);
         setIsOpen(true);
     };
+    if(item==null) return null;
+    
     return (
         <div onClick={onItemClick} data-aos={currentLanguage == 'en' ? "fade-right" : "fade-left"} data-aos-delay={(index + 1) * 200}>
 
