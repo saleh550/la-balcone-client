@@ -1,3 +1,10 @@
 {
-    "EXPLORE_OUR_MENU":"Explore Our Menu"
+    "EXPLORE_OUR_MENU":"Explore Our Menu",
+    "LOGIN":"Login",
+    "USERNAME":"Username",
+    "PASSWORD":"Password",
+    "THIS_FIELD_CAN'T_BE_EMPTY":"This field can't be empty",
+    "SOMETHING_WENT_WRONG":"Something went wrong",
+    "USER_IS_NOT_EXIST":"User is not exist",
+    "GO_TO_MENU":"Go to Menu"
 }

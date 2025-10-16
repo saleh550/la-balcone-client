@@ -1,6 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
-import { useLanguage } from "../../store/useLanguage";
+import { useLanguage } from "../../../store/useLanguage";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import type { FC } from "react";
 

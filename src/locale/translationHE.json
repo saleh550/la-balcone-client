@@ -1,3 +1,10 @@
 {
-    "EXPLORE_OUR_MENU":"גלו את התפריט שלנו"
+    "EXPLORE_OUR_MENU":"גלו את התפריט שלנו",
+    "LOGIN":"התחברות",
+    "USERNAME":"שם משתמש",
+    "PASSWORD":"סיסמה",
+    "THIS_FIELD_CAN'T_BE_EMPTY":"שדה זה לא יכול להיות ריק",
+    "SOMETHING_WENT_WRONG":"משהו השתבש",
+    "USER_IS_NOT_EXIST":"המשתמש לא קיים",
+    "GO_TO_MENU":"עבור לתפריט"
 }

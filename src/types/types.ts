@@ -31,3 +31,9 @@ export type SubCategoryType = {
   arabicName: string;
   menuItems: MenuItemType[];
 };
+
+export type UserType = {
+  id: string;
+  name:string;
+  useName:string;
+};
