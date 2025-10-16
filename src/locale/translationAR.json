@@ -1,3 +1,10 @@
 {
-    "EXPLORE_OUR_MENU":"استكشف قائمتنا"
+    "EXPLORE_OUR_MENU":"استكشف قائمتنا",
+    "LOGIN":"تسجيل الدخول",
+    "USERNAME":"اسم المستخدم",  
+    "PASSWORD":"كلمة المرور",
+    "THIS_FIELD_CAN'T_BE_EMPTY":"هذا الحقل لا يمكن أن يكون فارغًا",
+    "SOMETHING_WENT_WRONG":"حدث خطأ ما",
+    "USER_IS_NOT_EXIST":"المستخدم غير موجود",
+    "GO_TO_MENU":"اذهب إلى القائمة"
 }

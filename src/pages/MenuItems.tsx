@@ -6,7 +6,7 @@ import { useMainCategories } from '../store/useMainCategories';
 import { useLanguage } from '../store/useLanguage';
 import { getName } from '../utils/utils';
 import type { MainCategoryType } from '../types/types';
-import GoBackButton from '../components/customs/GoBackButton';
+import GoBackButton from '../components/customs/buttons/GoBackButton';
 import Modal from '../components/customs/modals/Modal';
 import MenuItemDetails from '../components/menu-items/MenuItemDetails';
 import { useSubCategories } from '../store/useSubCategories';
