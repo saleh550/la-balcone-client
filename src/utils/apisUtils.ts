@@ -30,6 +30,8 @@ export const addNewCategory = async (
   try {
     setIsLoading(true);
     const response = await createCategoryApi(data);
+    console.log("addNewCategory response",response);
+    
     addToStore(response?.data?.data);
     setIsOpen(false);
   } catch (error) {
