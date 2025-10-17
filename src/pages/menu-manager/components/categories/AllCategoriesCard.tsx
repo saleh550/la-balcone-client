@@ -1,0 +1,128 @@
+import React, { type Dispatch, type SetStateAction } from 'react'
+import type { MainCategoryType } from '../../../../types/types'
+import { FaEdit, FaTrash, FaEyeSlash, FaEye } from "react-icons/fa";
+import { getName } from '../../../../utils/utils';
+import { useLanguage } from '../../../../store/useLanguage';
+import { useTranslation } from 'react-i18next';
+import { BiSolidDish } from "react-icons/bi";
+import { useMenuManager } from '../../../../store/useMenuManager';
+const baseURL = import.meta.env.VITE_REACT_APP_BASE_URL;
+interface AllCategoriesCardProps {
+    category: MainCategoryType
+    index: number
+    setIsEditFormOpen: Dispatch<SetStateAction<boolean>>
+}
+const AllCategoriesCard: React.FC<AllCategoriesCardProps> = ({ category, index, setIsEditFormOpen }) => {
+    const { currentLanguage } = useLanguage()
+    const { setEditingCategory } = useMenuManager()
+    const { t } = useTranslation()
+    const { englishName, arabicName, hebrewName, image, status, createdAt } =
+        category;
+    const isPublished = status === "active";
+    const onEdit = () => {
+        setIsEditFormOpen(true);
+        setEditingCategory(category);
+    }
+    return (
+        <div
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay={index * 200}
+            className="bg-white  shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col"
+        >
+            {/* Image */}
+            <div className="overflow-hidden">
+                <img
+                    src={`${baseURL}${image}`}
+                    alt={englishName}
+                    className="w-full h-40 object-cover transform hover:scale-110 transition-transform duration-500"
+                />
+            </div>
+
+            {/* Content */}
+            <div className="px-3 py-1 flex flex-col justify-between flex-1">
+                <div>
+                    <h3 className="text-xl font-semibold text-gray-800 text-center ">
+                        {getName(currentLanguage, { englishName, arabicName, hebrewName })}
+                    </h3>
+                    <p className="text-sm text-gray-500 text-center">
+                        {new Date(createdAt).toLocaleDateString()}
+                    </p>
+                </div>
+
+                {/* Buttons */}
+                <div className="flex justify-between mt-3 ">
+                    <button
+                        // onClick={() =>
+                        //   onTogglePublish?.(category.id, isPublished ? "pending" : "active")
+                        // }
+                        className={`flex justify-around items-center min-w-full  p-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 border border-gray-500 `}
+                        title={isPublished ? "Unpublish" : "Publish"}
+                    >
+
+                        <>
+                            <span className='mx-1'>
+                                {t("SHOW_ITEMS")}
+                            </span>
+                            <BiSolidDish />
+                        </>
+
+                    </button>
+                </div>
+                <div className="flex justify-between mt-3 ">
+                    <button
+                        // onClick={() =>
+                        //   onTogglePublish?.(category.id, isPublished ? "pending" : "active")
+                        // }
+                        className={`flex justify-around items-center min-w-full  p-2  transition bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 border border-gray-500 `}
+                        title={isPublished ? "Unpublish" : "Publish"}
+                    >
+                        {isPublished ?
+                            <>
+                                <span className='mx-1'>
+                                    {t("UNPUBLISH")}
+                                </span>
+                                <FaEyeSlash className='' />
+                            </>
+                            :
+                            <>
+                                <span className='mx-1'>
+                                    {t("PUBLISH")}
+                                </span>
+                                <FaEye className='' />
+                            </>
+                        }
+                    </button>
+                </div>
+                <div className="flex justify-between mt-2 gap-2">
+                    <button
+                        onClick={onEdit}
+                        className=" flex justify-around items-center w-full p-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 border border-gray-500  transition"
+                        title="Edit"
+                    >
+                        <span className='mx-1'>
+                            {t("EDIT")}
+                        </span>
+                        <FaEdit className='' />
+                    </button>
+
+                    <button
+                        // onClick={() => onDelete?.(category.id)}
+                        className=" flex justify-around items-center w-full p-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 border border-gray-500  transition"
+                        title="Delete"
+                    >
+                        <span className='mx-1'>
+
+                            {t("DELETE")}
+                        </span>
+                        <FaTrash />
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    )
+}
+
+export default AllCategoriesCard

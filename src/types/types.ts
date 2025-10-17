@@ -1,10 +1,16 @@
+import type { CategoryStatus } from "./enums";
+
 export type MainCategoryType = {
-    id: string;
-    englishName: string;
-    arabicName: string;
-    hebrewName: string;
-    image: string;
-}
+  id: string;
+  englishName: string;
+  arabicName: string;
+  hebrewName: string;
+  image: string;
+  createdBy: string;
+  status: CategoryStatus;
+  createdAt: Date;
+  updatedAt: Date;
+};
 export type MenuItemType = {
   id: string;
   subCategoryId: string;
@@ -21,7 +27,7 @@ export type MenuItemType = {
   isWithMilk: boolean;
   isVegan: boolean;
   isWithGluten: boolean;
-  status:string
+  status: string;
 };
 export type SubCategoryType = {
   id: string;
@@ -34,6 +40,6 @@ export type SubCategoryType = {
 
 export type UserType = {
   id: string;
-  name:string;
-  useName:string;
+  name: string;
+  useName: string;
 };
