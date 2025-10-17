@@ -7,6 +7,8 @@ import MainCategories from "../pages/MainCategories";
 import MenuItems from "../pages/MenuItems";
 import AuthLayout from "../layout/auth-layout/AuthLayout";
 import { LoginPage } from "../pages/auth/login/LoginPage";
+import MenuManagerLayout from "../layout/menu-manager-layout/MenuManagerLayout";
+import MenuManagerPage from "../pages/menu-manager/MenuManagerPage";
 // import AppLayout from "../layout/appLayout";
 // import Home from "../pages/home/home";
 // // import DetailsForm from "../pages/details/DetailsForm";
@@ -28,10 +30,18 @@ const router = createBrowserRouter([
                 path: "/auth",
                 element: <LoginPage />,
             },
-            //   {
-            //     path: "/register",
-            //     element: <RegisterPage />,
-            //   },
+
+        ],
+    },
+    {
+        path: "/menu/maneger",
+        element: <MenuManagerLayout />,
+
+        children: [
+            {
+                path: "/menu/maneger",
+                element: <MenuManagerPage />,
+            },
 
         ],
     },

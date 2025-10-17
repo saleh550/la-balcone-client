@@ -24,8 +24,9 @@ export const login = async (
   try {
     const res = await LoginApi(data);
     setIsLoading(false);
-    setUser(res?.data);
-    navigate("/admin/main-categories");
+    const {token,...user} = res?.data;
+    setUser({ accessToken: token, user });
+    navigate("/menu/maneger");
     return res?.data;   
   } catch (err: AxiosError | any) {
     setIsLoading(false);
