@@ -8,7 +8,7 @@ import { getAllCategories } from "../../utils/apisUtils"
 
 
 const MenuManagerLayout = () => {
-    const [isLoading, setIsLoading] =useState(false)
+    const [_isLoading, setIsLoading] =useState(false)
     const {setCategories}=useMenuManager()
     useEffect(() => {
         const fun = async () => {
