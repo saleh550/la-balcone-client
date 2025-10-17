@@ -31,5 +31,10 @@
   "HEBREW_NAME_LABEL": "שם בעברית",
   "HEBREW_NAME_PLACEHOLDER": "הזן שם בעברית",
   "SAVE": "שמור",
-  "SAVING": "שומר..."
+  "SAVING": "שומר...",
+  "DELETE_CATEGORY_TITLE": "מחיקת קטגוריה",
+  "DELETE_CATEGORY_QUESTION": "האם אתה בטוח שברצונך למחוק את הקטגוריה הזו? לא ניתן לבטל פעולה זו.",
+  "CONFIRM_DELETE": "אישור מחיקה",
+  "CANCEL": "ביטול",
+  "DELETING":"מוחק..."
 }

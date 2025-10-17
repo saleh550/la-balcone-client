@@ -31,5 +31,10 @@
   "HEBREW_NAME_LABEL": "Hebrew Name",
   "HEBREW_NAME_PLACEHOLDER": "Enter Hebrew Name",
   "SAVE": "Save",
-  "SAVING": "Saving..."
+  "SAVING": "Saving...",
+  "DELETE_CATEGORY_TITLE": "Delete Category",
+  "DELETE_CATEGORY_QUESTION": "Are you sure you want to delete this category? This action cannot be undone.",
+  "CONFIRM_DELETE": "Confirm Delete",
+  "CANCEL": "Cancel",
+  "DELETING":"Deleting..."
 }

@@ -11,10 +11,11 @@ interface AllCategoriesCardProps {
     category: MainCategoryType
     index: number
     setIsEditFormOpen: Dispatch<SetStateAction<boolean>>
+    setIsDeleteCategoryModalOpen: Dispatch<SetStateAction<boolean>>
 }
-const AllCategoriesCard: React.FC<AllCategoriesCardProps> = ({ category, index, setIsEditFormOpen }) => {
+const AllCategoriesCard: React.FC<AllCategoriesCardProps> = ({ category, index, setIsEditFormOpen, setIsDeleteCategoryModalOpen }) => {
     const { currentLanguage } = useLanguage()
-    const { setEditingCategory } = useMenuManager()
+    const { setEditingCategory, setDeletingCategory } = useMenuManager()
     const { t } = useTranslation()
     const { englishName, arabicName, hebrewName, image, status, createdAt } =
         category;
@@ -22,6 +23,10 @@ const AllCategoriesCard: React.FC<AllCategoriesCardProps> = ({ category, index, 
     const onEdit = () => {
         setIsEditFormOpen(true);
         setEditingCategory(category);
+    }
+    const onDelete = () => {
+        setIsDeleteCategoryModalOpen(true);
+        setDeletingCategory(category);
     }
     return (
         <div
@@ -108,6 +113,7 @@ const AllCategoriesCard: React.FC<AllCategoriesCardProps> = ({ category, index, 
 
                     <button
                         // onClick={() => onDelete?.(category.id)}
+                        onClick={onDelete}
                         className=" flex justify-around items-center w-full p-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 border border-gray-500  transition"
                         title="Delete"
                     >

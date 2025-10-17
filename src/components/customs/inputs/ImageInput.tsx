@@ -22,7 +22,7 @@ const ImageInput: React.FC<ImageInputProps> = (
     }
 ) => {
     const [preview, setPreview] = React.useState<string | null>(
-        defaultValue ? `${baseURL}/${defaultValue}` : null
+        defaultValue ? `${baseURL}${defaultValue}` : null
     );
     const { t } = useTranslation();
     return (
