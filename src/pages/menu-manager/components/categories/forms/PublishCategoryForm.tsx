@@ -5,16 +5,16 @@ import { getName } from "../../../../../utils/utils";
 import { useLanguage } from "../../../../../store/useLanguage";
 
 
-interface DeleteCategoryFormProps {
+interface PublishCategoryFormProps {
     onConfirm: () => void;
     onCancel: () => void;
-    isDeleteLoading: boolean
+    isPublishLoading: boolean
 }
 
-const DeleteCategoryForm: React.FC<DeleteCategoryFormProps> = ({
+const PublishCategoryForm: React.FC<PublishCategoryFormProps> = ({
     onConfirm,
     onCancel,
-    isDeleteLoading
+    isPublishLoading
 }) => {
     const { t } = useTranslation();
     const { deletingCategory } = useMenuManager();
@@ -24,13 +24,13 @@ const DeleteCategoryForm: React.FC<DeleteCategoryFormProps> = ({
         <div className="flex flex-col items-center text-center space-y-4 p-4">
             {/* Title */}
             <h2 className="text-xl font-semibold text-gray-800">
-                {t("DELETE_CATEGORY_TITLE") || "Delete Category"}
+                {t("PUBLISH_CATEGORY_TITLE") || "Publish Category"}
             </h2>
 
             {/* Description */}
             <p className="text-gray-600 text-sm">
-                {t("DELETE_CATEGORY_QUESTION") ||
-                    `Are you sure you want to delete "${getName(currentLanguage, deletingCategory)}"? This action cannot be undone.`}
+                {t("PUBLISH_CATEGORY_QUESTION") ||
+                    `Are you sure you want to Publish "${getName(currentLanguage, deletingCategory)}"? This action cannot be undone.`}
             </p>
 
             {/* Buttons */}
@@ -42,15 +42,15 @@ const DeleteCategoryForm: React.FC<DeleteCategoryFormProps> = ({
                     {t("CANCEL") || "Cancel"}
                 </button>
                 <button
-                    disabled={isDeleteLoading}
+                    disabled={isPublishLoading}
                     onClick={onConfirm}
-                    className="w-full sm:w-1/2 py-2 font-semibold bg-red-600 text-white rounded-full hover:bg-red-700 transition"
+                    className="w-full sm:w-1/2 py-2 font-semibold bg-green-600 text-white rounded-full hover:bg-green-700 transition"
                 >
-                    {!isDeleteLoading ? t("CONFIRM_DELETE") : t("DELETING")}
+                    {!isPublishLoading ? t("CONFIRM_PUBLISH") : t("PUBLISHING")}
                 </button>
             </div>
         </div>
     );
 };
 
-export default DeleteCategoryForm;
+export default PublishCategoryForm;

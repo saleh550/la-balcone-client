@@ -36,5 +36,15 @@
   "DELETE_CATEGORY_QUESTION": "Are you sure you want to delete this category? This action cannot be undone.",
   "CONFIRM_DELETE": "Confirm Delete",
   "CANCEL": "Cancel",
-  "DELETING":"Deleting..."
+  "DELETING": "Deleting...",
+  "PUBLISH_CATEGORY_TITLE": "Publish Category",
+  "PUBLISH_CATEGORY_QUESTION": "Are you sure you want to publish this category?",
+  "CONFIRM_PUBLISH": "Confirm Publish",
+  "PUBLISHING": "Publishing...",
+  "UNPUBLISH_CATEGORY_TITLE": "Unpublish Category",
+  "UNPUBLISH_CATEGORY_QUESTION": "Are you sure you want to unpublish this category?",
+  "CONFIRM_UNPUBLISH": "Confirm Unpublish",
+  "UNPUBLISHING": "Unpublishing...",
+  "PUBLISHED": "Published",
+  "UNPUBLISHED": "Unpublished"
 }

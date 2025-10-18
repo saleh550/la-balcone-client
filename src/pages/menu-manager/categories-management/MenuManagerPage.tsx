@@ -1,18 +1,20 @@
 
 import { useTranslation } from "react-i18next"
-import AllCategoriesHeader from "./components/categories/AllCategoriesHeader"
-import AllCategoriesList from "./components/categories/AllCategoriesList"
+import AllCategoriesHeader from "../components/categories/AllCategoriesHeader"
+import AllCategoriesList from "../components/categories/AllCategoriesList"
 import { useState } from "react"
-import Modal from "../../components/customs/modals/Modal"
-import AddCategoryForm from "./components/categories/forms/AddCategoryForm"
+import Modal from "../../../components/customs/modals/Modal"
+import AddCategoryForm from "../components/categories/forms/AddCategoryForm"
+import { useLanguage } from "../../../store/useLanguage"
 
 
 const MenuManagerPage = () => {
   const [isAddCategoryModalOpen, setIsAddCategoryModalOpen] = useState(false)
+  const { currentLanguage } = useLanguage()
   const { t } = useTranslation()
   return (
     <>
-      <div className="">
+      <div data-aos={currentLanguage == 'en' ? "fade-right" : "fade-left"} className="">
 
         <AllCategoriesHeader />
         <div className="p-2">
@@ -23,7 +25,7 @@ const MenuManagerPage = () => {
         <AllCategoriesList />
       </div>
       <Modal title={t("ADD_CATEGORY_FORM_TITLE")} isOpen={isAddCategoryModalOpen} setIsOpen={setIsAddCategoryModalOpen}>
-        <AddCategoryForm setIsAddCategoryModalOpen={setIsAddCategoryModalOpen}/>
+        <AddCategoryForm setIsAddCategoryModalOpen={setIsAddCategoryModalOpen} />
       </Modal>
     </>
   )
