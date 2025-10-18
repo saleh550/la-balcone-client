@@ -1,5 +1,6 @@
 import { type FieldValues } from "react-hook-form";
 import { publicRequest } from "../axios/PublicRequest";
+import { privateRequest } from "../axios/PrivateRequest";
 // import { privateRequest } from "../axios/PrivateRequest";
 
 export const LoginApi = (data: FieldValues) => {
@@ -9,7 +10,12 @@ export const LoginApi = (data: FieldValues) => {
     data: data,
   });
 };
-
+export const me = () => {
+  return privateRequest({
+    url: "api/users/me/",
+    method: "GET",
+  });
+};
 // export const GetMe = async () => {
 //   const respone = await privateRequest({
 //     url: "/auth/get/me",

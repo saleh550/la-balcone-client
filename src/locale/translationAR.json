@@ -36,5 +36,15 @@
   "DELETE_CATEGORY_QUESTION": "هل أنت متأكد أنك تريد حذف هذه الفئة؟ لا يمكن التراجع عن هذا الإجراء.",
   "CONFIRM_DELETE": "تأكيد الحذف",
   "CANCEL": "إلغاء",
-  "DELETING":"جارٍ الحذف..."
+  "DELETING": "جارٍ الحذف...",
+  "PUBLISH_CATEGORY_TITLE": "نشر الفئة",
+  "PUBLISH_CATEGORY_QUESTION": "هل أنت متأكد أنك تريد نشر هذه الفئة؟",
+  "CONFIRM_PUBLISH": "تأكيد النشر",
+  "PUBLISHING": "جارٍ النشر...",
+  "UNPUBLISH_CATEGORY_TITLE": "إلغاء نشر الفئة",
+  "UNPUBLISH_CATEGORY_QUESTION": "هل أنت متأكد أنك تريد إلغاء نشر هذه الفئة؟",
+  "CONFIRM_UNPUBLISH": "تأكيد إلغاء النشر",
+  "UNPUBLISHING": "جارٍ إلغاء النشر...",
+  "PUBLISHED": "تم النشر",
+  "UNPUBLISHED": "لم يتم النشر"
 }

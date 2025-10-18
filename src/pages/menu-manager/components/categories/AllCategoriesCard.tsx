@@ -1,19 +1,24 @@
 import React, { type Dispatch, type SetStateAction } from 'react'
 import type { MainCategoryType } from '../../../../types/types'
-import { FaEdit, FaTrash, FaEyeSlash, FaEye } from "react-icons/fa";
+import { FaEdit, FaTrash } from "react-icons/fa";
 import { getName } from '../../../../utils/utils';
 import { useLanguage } from '../../../../store/useLanguage';
 import { useTranslation } from 'react-i18next';
 import { BiSolidDish } from "react-icons/bi";
 import { useMenuManager } from '../../../../store/useMenuManager';
+import { SwitchButton } from '../../../../components/customs/inputs/Switch';
+import { Link } from 'react-router-dom';
 const baseURL = import.meta.env.VITE_REACT_APP_BASE_URL;
 interface AllCategoriesCardProps {
     category: MainCategoryType
     index: number
     setIsEditFormOpen: Dispatch<SetStateAction<boolean>>
     setIsDeleteCategoryModalOpen: Dispatch<SetStateAction<boolean>>
+    setIsPublishModalOpen: Dispatch<SetStateAction<boolean>>
+    setIsUnPublishModalOpen: Dispatch<SetStateAction<boolean>>
 }
-const AllCategoriesCard: React.FC<AllCategoriesCardProps> = ({ category, index, setIsEditFormOpen, setIsDeleteCategoryModalOpen }) => {
+const AllCategoriesCard: React.FC<AllCategoriesCardProps> = ({ category, index, setIsEditFormOpen, setIsDeleteCategoryModalOpen, setIsPublishModalOpen,
+    setIsUnPublishModalOpen }) => {
     const { currentLanguage } = useLanguage()
     const { setEditingCategory, setDeletingCategory } = useMenuManager()
     const { t } = useTranslation()
@@ -27,6 +32,14 @@ const AllCategoriesCard: React.FC<AllCategoriesCardProps> = ({ category, index, 
     const onDelete = () => {
         setIsDeleteCategoryModalOpen(true);
         setDeletingCategory(category);
+    }
+    const onPublishToggle = () => {
+        setEditingCategory(category);
+        if (isPublished) {
+            setIsUnPublishModalOpen(true)
+        } else {
+            setIsPublishModalOpen(true)
+        }
     }
     return (
         <div
@@ -57,7 +70,8 @@ const AllCategoriesCard: React.FC<AllCategoriesCardProps> = ({ category, index, 
 
                 {/* Buttons */}
                 <div className="flex justify-between mt-3 ">
-                    <button
+                    <Link
+                        to={`/menu/maneger/items/${category.id}`}
                         // onClick={() =>
                         //   onTogglePublish?.(category.id, isPublished ? "pending" : "active")
                         // }
@@ -72,32 +86,18 @@ const AllCategoriesCard: React.FC<AllCategoriesCardProps> = ({ category, index, 
                             <BiSolidDish />
                         </>
 
-                    </button>
+                    </Link>
                 </div>
+
                 <div className="flex justify-between mt-3 ">
-                    <button
-                        // onClick={() =>
-                        //   onTogglePublish?.(category.id, isPublished ? "pending" : "active")
-                        // }
-                        className={`flex justify-around items-center min-w-full  p-2  transition bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 border border-gray-500 `}
-                        title={isPublished ? "Unpublish" : "Publish"}
-                    >
-                        {isPublished ?
-                            <>
-                                <span className='mx-1'>
-                                    {t("UNPUBLISH")}
-                                </span>
-                                <FaEyeSlash className='' />
-                            </>
-                            :
-                            <>
-                                <span className='mx-1'>
-                                    {t("PUBLISH")}
-                                </span>
-                                <FaEye className='' />
-                            </>
-                        }
-                    </button>
+                    <p className={`text-md  ${isPublished ? "text-green-700 font-semibold" : "text-gray-700 line-through"}`}>{t("PUBLISHED")}</p>
+                    {/* {isPublished ? <>
+                    </> : <>
+                        <p>{t("UNPUBLISHED")}</p>
+                    </>} */}
+
+                    <SwitchButton isChecked={isPublished} onClick={onPublishToggle} />
+
                 </div>
                 <div className="flex justify-between mt-2 gap-2">
                     <button

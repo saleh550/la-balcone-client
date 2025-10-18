@@ -8,7 +8,9 @@ import MenuItems from "../pages/MenuItems";
 import AuthLayout from "../layout/auth-layout/AuthLayout";
 import { LoginPage } from "../pages/auth/login/LoginPage";
 import MenuManagerLayout from "../layout/menu-manager-layout/MenuManagerLayout";
-import MenuManagerPage from "../pages/menu-manager/MenuManagerPage";
+import MenuManagerPage from "../pages/menu-manager/categories-management/MenuManagerPage";
+import PrivateRoute from "./PrivateRoute";
+import MenuItemsManagement from "../pages/menu-manager/menu-items-management/MenuItemsManagement";
 // import AppLayout from "../layout/appLayout";
 // import Home from "../pages/home/home";
 // // import DetailsForm from "../pages/details/DetailsForm";
@@ -35,12 +37,20 @@ const router = createBrowserRouter([
     },
     {
         path: "/menu/maneger",
-        element: <MenuManagerLayout />,
+
+        element:
+            <PrivateRoute>
+                <MenuManagerLayout />
+            </PrivateRoute>,
 
         children: [
             {
                 path: "/menu/maneger",
                 element: <MenuManagerPage />,
+            },
+            {
+                path: "/menu/maneger/items/:categoryId",
+                element: <MenuItemsManagement />,
             },
 
         ],

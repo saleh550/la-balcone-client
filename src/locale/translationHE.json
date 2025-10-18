@@ -36,5 +36,15 @@
   "DELETE_CATEGORY_QUESTION": "האם אתה בטוח שברצונך למחוק את הקטגוריה הזו? לא ניתן לבטל פעולה זו.",
   "CONFIRM_DELETE": "אישור מחיקה",
   "CANCEL": "ביטול",
-  "DELETING":"מוחק..."
+  "DELETING": "מוחק...",
+  "PUBLISH_CATEGORY_TITLE": "פרסום קטגוריה",
+  "PUBLISH_CATEGORY_QUESTION": "האם אתה בטוח שברצונך לפרסם את הקטגוריה הזו?",
+  "CONFIRM_PUBLISH": "אישור פרסום",
+  "PUBLISHING": "מפרסם...",
+  "UNPUBLISH_CATEGORY_TITLE": "הסרת פרסום קטגוריה",
+  "UNPUBLISH_CATEGORY_QUESTION": "האם אתה בטוח שברצונך להסיר את פרסום הקטגוריה הזו?",
+  "CONFIRM_UNPUBLISH": "אישור הסרת פרסום",
+  "UNPUBLISHING": "מסיר פרסום...",
+  "PUBLISHED": "פורסם",
+  "UNPUBLISHED": "לא פורסם"
 }
