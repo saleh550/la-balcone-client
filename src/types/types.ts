@@ -22,12 +22,13 @@ export type MenuItemType = {
   arabicDescription: string;
   image: string;
   price: number;
-  isAvailable: boolean;
-  isPublished: boolean;
   isWithMilk: boolean;
   isVegan: boolean;
   isWithGluten: boolean;
-  status: string;
+  createdBy: string;
+  status: CategoryStatus;
+  createdAt: Date;
+  updatedAt: Date;
 };
 export type SubCategoryType = {
   id: string;
@@ -36,6 +37,9 @@ export type SubCategoryType = {
   hebrewName: string;
   arabicName: string;
   menuItems: MenuItemType[];
+  createdBy: string;
+  createdAt: Date;
+  updatedAt: Date;
 };
 
 export type UserType = {

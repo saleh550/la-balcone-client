@@ -1,60 +1,84 @@
-import { motion, AnimatePresence } from "framer-motion";
-import type { FC, ReactNode } from "react";
-import { FiX } from "react-icons/fi";
-
-interface CustomModalProps {
-    isOpen: boolean;
-    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-    title?: string;
+import React, { type ReactNode } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment } from "react";
+import { FaXmark } from "react-icons/fa6";
+interface props {
+    className?: "max-w-2xl" | "max-w-3xl" | "max-w-4xl" | "min-w-4xl" | "pointer-events-none bg-opacity-100 animate-pulse" | ""
     children: ReactNode;
-    widthClass?: string; // optional for size control (e.g. "max-w-lg")
+    title?: string | ReactNode;
+    isOpen: boolean;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
-
-const Modal: FC<CustomModalProps> = ({
+const Modal: React.FC<props> = ({
+    className,
+    children,
+    title,
     isOpen,
     setIsOpen,
-    title,
-    children,
-    widthClass = "",
 }) => {
-    return (
-        <AnimatePresence>
-            {isOpen && (
-                <motion.div
-                    className="fixed inset-0 bg-white/50 backdrop-blur-sm flex justify-center items-center z-50"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                >
-                    <motion.div
-                        className={`bg-white/50  rounded-2xl shadow-xl w-full ${widthClass} mx-4 relative`}
-                        initial={{ scale: 0.9, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        exit={{ scale: 0.9, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                    >
-                        {/* Header */}
-                        <div className="flex justify-between items-center border-b border-gray-200 dark:border-gray-700 p-4">
-                            {title && (
-                                <h2 className="text-lg font-semibold text-gray-800 ">
-                                    {title}
-                                </h2>
-                            )}
-                            <button
-                                onClick={() => setIsOpen(false)}
-                                className="text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition"
-                            >
-                                <FiX size={20} />
-                            </button>
-                        </div>
+    function closeModal() {
+        setIsOpen(false);
+    }
 
-                        {/* Content */}
-                        <div className="p-4 overflow-y-auto max-h-[80vh]">{children}</div>
-                    </motion.div>
-                </motion.div>
-            )}
-        </AnimatePresence>
+    return (
+        <>
+            <Transition appear show={isOpen} as={Fragment}>
+                <Dialog as="div" className="relative z-50 " onClose={closeModal}>
+                    <Transition.Child
+                        as={Fragment}
+                        enter="ease-out duration-300"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="ease-in duration-200"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                    >
+                        <div className="fixed inset-0 bg-black/25" />
+                    </Transition.Child>
+
+                    <div className="fixed inset-0 overflow-y-auto">
+                        <div className="flex min-h-full items-center justify-center p-4 text-center">
+                            <Transition.Child
+                                as={Fragment}
+                                enter="ease-out duration-300"
+                                enterFrom="opacity-0 scale-95"
+                                enterTo="opacity-100 scale-100"
+                                leave="ease-in duration-200"
+                                leaveFrom="opacity-100 scale-100"
+                                leaveTo="opacity-0 scale-95"
+                            >
+                                <Dialog.Panel className={` ${className}   w-full  max-w-4xl transform overflow-hidden rounded-2xl bg-white p-6 text-start align-middle shadow-xl transition-all`}>
+                                    <div className="flex justify-end ">
+
+                                        <Dialog.Title
+                                            as="p"
+                                            className="text-lg font-medium leading-6 text-gray-900"
+                                        >
+                                            <button
+                                                onClick={() => setIsOpen(false)}
+                                                title="Cancel"
+                                                className="flex items-center justify-center w-10 h-10 rounded-full bg-red-100 text-red-600 hover:bg-red-200 hover:text-red-700 transition-all duration-300 hover:rotate-90 active:scale-95 shadow-sm"
+                                            >
+                                                <FaXmark className="text-lg" />
+                                            </button>
+                                        </Dialog.Title>
+                                    </div>
+                                    <Dialog.Title
+                                        as="h3"
+                                        className="text-lg font-medium leading-6 text-gray-900"
+                                    >
+                                        {title}
+                                    </Dialog.Title>
+
+
+                                    <div className="mt-2">{children}</div>
+                                </Dialog.Panel>
+                            </Transition.Child>
+                        </div>
+                    </div>
+                </Dialog>
+            </Transition>
+        </>
     );
 };
-
-export default Modal;
+export default Modal
