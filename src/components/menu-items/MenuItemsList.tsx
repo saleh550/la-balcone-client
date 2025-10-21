@@ -1,9 +1,9 @@
-import { useEffect, type FC } from 'react'
+import { useEffect, useState, type FC } from 'react'
 import { useParams } from 'react-router-dom';
-import { useMainCategories } from '../../store/useMainCategories';
 import MenuItemCard from './MenuItemCard';
 import { useLanguage } from '../../store/useLanguage';
 import { useSubCategories } from '../../store/useSubCategories';
+import { getActiveSubCategories } from '../../utils/apisUtils';
 
 interface MenuItemsListProps {
     isOpen: boolean
@@ -12,25 +12,23 @@ interface MenuItemsListProps {
 const MenuItemsList: FC<MenuItemsListProps> = ({ isOpen
     , setIsOpen }) => {
     const { id } = useParams<{ id: string }>();
-    const { categories } = useMainCategories();
-    const { subCategories, menuItems, setMenuItems } = useSubCategories();
+    const [_isLoading, setIsLoading] = useState(false)
+    // const { categories } = useMainCategories();
+    const { subCategories, menuItems, setMenuItems, setSubCategories } = useSubCategories();
     const { currentLanguage } = useLanguage()
     useEffect(() => {
-        const category = categories.find(cat => cat.id === id);
-            console.log("category",category);
-
-        if (category) {
-            const filteredSubCategories = subCategories.filter(
-                (subCat) => subCat.categoryId === id
-            );
-            console.log("subCategories",subCategories);
-            console.log("filteredSubCategories",filteredSubCategories);
-            const allItems = filteredSubCategories.flatMap((sub) => sub.menuItems);
-            console.log("all items",allItems);
-            
+        const fun = async () => {
+            if (id)
+                await getActiveSubCategories(setSubCategories, setIsLoading, id)
+        }
+        fun()
+    }, [id]);
+    useEffect(() => {
+        if (subCategories) {
+            const allItems = subCategories.flatMap((sub) => sub.menuItems);
             setMenuItems(allItems);
         }
-    }, [id]);
+    }, [subCategories]);
 
     return (
         <div data-aos={currentLanguage == 'en' ? "fade-right" : "fade-left"} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">

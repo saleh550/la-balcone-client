@@ -4,6 +4,7 @@ import type { MenuItemType } from '../../types/types';
 import { useLanguage } from '../../store/useLanguage';
 import { getDescription, getName } from '../../utils/utils';
 import { useSubCategories } from '../../store/useSubCategories';
+const baseURL = import.meta.env.VITE_REACT_APP_BASE_URL;
 interface MenuItemCardProps {
     item: MenuItemType
     index: number
@@ -32,7 +33,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, index,
                 {/* Image Section */}
                 <div className="w-1/3 h-full overflow-hidden">
                     <img
-                        src={item.image}
+                        src={`${baseURL}${item.image}`}
                         alt={item.englishName}
                         className="w-full h-full object-cover"
                     />

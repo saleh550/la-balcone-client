@@ -1,9 +1,20 @@
+import { useEffect, useState } from 'react'
 import ScrollToTop from '../../components/customs/ScrollToTop'
 import MenuFooter from './MenuFooter'
 import MenuHeader from './MenuHeader'
 import { Outlet } from 'react-router-dom'
+import { useMainCategories } from '../../store/useMainCategories'
+import { getActiveCategories } from '../../utils/apisUtils'
 
 const MenuLayout = () => {
+      const [_isLoading, setIsLoading] =useState(false)
+      const {setCategories}=useMainCategories()
+      useEffect(() => {
+          const fun = async () => {
+              await getActiveCategories(setCategories, setIsLoading)
+          }
+          fun()
+      }, [])
   return (
     <>
     <div className="min-h-svh ">

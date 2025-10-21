@@ -4,6 +4,7 @@ import type { MainCategoryType } from '../../types/types';
 import { useLanguage } from '../../store/useLanguage';
 import { getName } from '../../utils/utils';
 import { useNavigate } from 'react-router-dom';
+const baseURL = import.meta.env.VITE_REACT_APP_BASE_URL;
 interface MainCategoriesCardProps {
     cat: MainCategoryType;
     index: number;
@@ -25,7 +26,7 @@ const MainCategoriesCard: React.FC<MainCategoriesCardProps> = ({ cat, index }) =
                 className="relative group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
             >
                 <img
-                    src={cat.image}
+                    src={`${baseURL}${cat.image}`}
                     alt={getName(currentLanguage, cat)}
                     className="w-full h-36 sm:h-48 md:h-56 object-cover group-hover:brightness-75 transition-all duration-300"
                 />

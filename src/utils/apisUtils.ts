@@ -8,6 +8,7 @@ import {
   activateCategoryApi,
   createCategoryApi,
   deleteCategoryApi,
+  getActiveCategoriesApi,
   getAllCategoriesApi,
   unActivateCategoryApi,
   updateCategoryApi,
@@ -15,6 +16,7 @@ import {
 import type { FieldValues } from "react-hook-form";
 import {
   createSubCategoryApi,
+  getActiveSubCategoriesApi,
   getAllSubCategoriesApi,
 } from "../services/subCategories/sub-categories-api";
 import {
@@ -39,6 +41,22 @@ export const getAllCategories = async (
     setIsLoading(false);
   }
 };
+export const getActiveCategories = async (
+  setStoreData: (data: MainCategoryType[]) => void,
+  setIsLoading: Dispatch<SetStateAction<boolean>>
+) => {
+  try {
+    setIsLoading(true);
+    const response = await getActiveCategoriesApi();
+    console.log(response?.data);
+    
+    setStoreData(response?.data?.data);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    setIsLoading(false);
+  }
+};
 
 export const getAllSubCategories = async (
   setStoreData: (data: SubCategoryType[]) => void,
@@ -48,6 +66,22 @@ export const getAllSubCategories = async (
   try {
     setIsLoading(true);
     const response = await getAllSubCategoriesApi(categoryId);
+    setStoreData(response?.data?.data);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    setIsLoading(false);
+  }
+};
+
+export const getActiveSubCategories = async (
+  setStoreData: (data: SubCategoryType[]) => void,
+  setIsLoading: Dispatch<SetStateAction<boolean>>,
+  categoryId: string
+) => {
+  try {
+    setIsLoading(true);
+    const response = await getActiveSubCategoriesApi(categoryId);
     setStoreData(response?.data?.data);
   } catch (error) {
     console.log(error);
