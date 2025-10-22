@@ -68,6 +68,7 @@
   "HEBREW_DESC_LABEL": "Hebrew Description",
   "HEBREW_DESC_PLACEHOLDER": "Enter the description in Hebrew",
   "PRICE_LABEL": "Price",
+  "PRICE": "Price",
   "PRICE_PLACEHOLDER": "Enter the price",
   "EDIT_MENU_ITEM_FORM_TITLE": "Edit Menu Item",
   "DELETE_MENU_ITEM_TITLE": "Delete Menu Item",
