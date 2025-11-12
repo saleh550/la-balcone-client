@@ -17,7 +17,7 @@ const MainCategoriesCard: React.FC<MainCategoriesCardProps> = ({ cat, index }) =
         navigate(`/menu-items/${cat.id}`);
     }
     return (
-        <div onClick={onCardClick} data-aos="fade-up" data-aos-delay={(index * 200).toString()} >
+        <div onClick={onCardClick}  >
 
             <motion.div
                 key={index}
