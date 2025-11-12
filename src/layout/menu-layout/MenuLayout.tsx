@@ -5,26 +5,34 @@ import MenuHeader from './MenuHeader'
 import { Outlet } from 'react-router-dom'
 import { useMainCategories } from '../../store/useMainCategories'
 import { getActiveCategories } from '../../utils/apisUtils'
-
+import darkbg from '../../assets/bgimages/dark.avif'
+import lightbg from '../../assets/bgimages/light.jpg'
+import { useDarkMode } from '../../store/useDarkMode'
 const MenuLayout = () => {
-      const [_isLoading, setIsLoading] =useState(false)
-      const {setCategories}=useMainCategories()
-      useEffect(() => {
-          const fun = async () => {
-              await getActiveCategories(setCategories, setIsLoading)
-          }
-          fun()
-      }, [])
+  const [_isLoading, setIsLoading] = useState(false)
+  const [bgImage, setBgImage] = useState<string>()
+  const { currentDarkMode } = useDarkMode();
+  const { setCategories } = useMainCategories()
+  useEffect(() => {
+    const fun = async () => {
+      await getActiveCategories(setCategories, setIsLoading)
+    }
+    fun()
+  }, [])
+  useEffect(() => {
+    setBgImage(currentDarkMode == "dark" ? darkbg : lightbg)
+  }, [currentDarkMode])
   return (
     <>
-    <div className="min-h-svh ">
-      <MenuHeader />
-      {/* add padding to push outlet below fixed header */}
-      <main className="pt-[72px]">
-        <ScrollToTop />
-        <Outlet />
-      </main>
-    </div>
+      <div className={`min-h-svh bg-cover bg-center bg-no-repeat bg-fixed
+            overflow-hidden` } style={{ backgroundImage: `url(${bgImage})` }}>
+        <MenuHeader />
+        {/* add padding to push outlet below fixed header */}
+        <main className="pt-[72px]">
+          <ScrollToTop />
+          <Outlet />
+        </main>
+      </div>
       <MenuFooter />
     </>
     // <div className="relative min-h-screen bg-gray-200 overflow-hidden">

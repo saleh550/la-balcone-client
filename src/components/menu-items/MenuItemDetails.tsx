@@ -12,7 +12,7 @@ import { useLanguage } from "../../store/useLanguage";
 interface MenuItemDetailsProps {
 
 }
-
+const baseUrl = import.meta.env.VITE_REACT_APP_BASE_URL;
 const MenuItemDetails: FC<MenuItemDetailsProps> = ({ }) => {
     const {currentLanguage}=useLanguage();
     const { selectedMenuItem: item } = useSubCategories();
@@ -22,7 +22,7 @@ const MenuItemDetails: FC<MenuItemDetailsProps> = ({ }) => {
             {/* 🖼️ Image Section */}
             <div className="md:w-1/2 w-full">
                 <img
-                    src={item?.image}
+                    src={`${baseUrl}${item?.image}`}
                     alt={item?.englishName}
                     className="w-full h-64 md:h-80 object-cover rounded-xl shadow-md"
                 />
@@ -31,15 +31,15 @@ const MenuItemDetails: FC<MenuItemDetailsProps> = ({ }) => {
             {/* 📝 Details Section */}
             <div className="md:w-1/2 w-full flex flex-col justify-between">
                 <div>
-                    <h2 className="text-2xl font-bold text-gray-900  mb-2">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-200  mb-2">
                         {getName(currentLanguage,item)}
                     </h2>
 
 
-                    <p className="text-gray-700  leading-relaxed mb-6">
+                    <p className="text-gray-700 dark:text-gray-300  leading-relaxed mb-6">
                         {getDescription(currentLanguage,item)}
                     </p>
-                    <p className="text-gray-500  mb-4">
+                    <p className="text-gray-500 dark:text-gray-100   mb-4">
                         ₪ {item?.price.toFixed(2)}
                     </p>
 
@@ -56,13 +56,13 @@ const MenuItemDetails: FC<MenuItemDetailsProps> = ({ }) => {
                         )} */}
 
                         {item?.isVegan && (
-                            <span className="flex items-center gap-1 px-3 py-2 bg-gray-700 text-gray-100  rounded-full text-sm font-medium">
+                            <span className="flex items-center gap-1 px-3 py-2 bg-gray-700 text-gray-100 dark:bg-gray-100 dark:text-gray-700  rounded-full text-sm font-medium">
                                 <FaLeaf /> Vegan
                             </span>
                         )}
 
                         {item?.isWithMilk && (
-                            <span className="flex items-center gap-1 px-3 py-2 bg-gray-700 text-gray-100 rounded-full text-sm font-medium">
+                            <span className="flex items-center gap-1 px-3 py-2 bg-gray-700 text-gray-100 dark:bg-gray-100 dark:text-gray-700 rounded-full text-sm font-medium">
                                 <img
                                     src={milkIcon}
                                     alt="Milk"
@@ -72,7 +72,7 @@ const MenuItemDetails: FC<MenuItemDetailsProps> = ({ }) => {
                         )}
 
                         {item?.isWithGluten && (
-                            <span className="flex items-center gap-1 px-3 py-2 bg-gray-700 text-gray-100 rounded-full text-sm font-medium">
+                            <span className="flex items-center gap-1 px-3 py-2 bg-gray-700 text-gray-100 dark:bg-gray-100 dark:text-gray-700 rounded-full text-sm font-medium">
                                 <img
                                     src={glutenIcon}
                                     alt="Gluten"
