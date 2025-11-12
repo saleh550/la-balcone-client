@@ -7,7 +7,7 @@ const MenuFooter: FC = () => {
   const facebookUrl = "https://www.facebook.com/YOUR_USERNAME"; // 🔁 change this
 
   return (
-    <footer className="w-full bg-gray-100 py-6 mt-10">
+    <footer className="w-full bg-white/70 dark:bg-gray-950/90 backdrop-blur-sm py-6">
       <div className="container mx-auto flex flex-col items-center">
         {/* Social Icons */}
         <div className="flex space-x-6 mb-3">
@@ -30,7 +30,7 @@ const MenuFooter: FC = () => {
         </div>
 
         {/* Footer Text */}
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-gray-500 dark:text-gray-400">
           © {new Date().getFullYear()} La Balcone Restaurant. All rights reserved.
         </p>
       </div>

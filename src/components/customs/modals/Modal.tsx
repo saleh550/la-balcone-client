@@ -47,7 +47,16 @@ const Modal: React.FC<props> = ({
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className={` ${className}   w-full  max-w-4xl transform overflow-hidden rounded-2xl bg-white p-6 text-start align-middle shadow-xl transition-all`}>
+                                <Dialog.Panel   className={`
+    ${className}
+    w-full max-w-4xl transform overflow-hidden
+    rounded-2xl
+    bg-white/80 dark:bg-gray-800/80
+    backdrop-blur-md
+    text-gray-900 dark:text-gray-100
+    p-6 text-start align-middle
+    shadow-xl transition-all
+  `}>
                                     <div className="flex justify-end ">
 
                                         <Dialog.Title
@@ -65,7 +74,7 @@ const Modal: React.FC<props> = ({
                                     </div>
                                     <Dialog.Title
                                         as="h3"
-                                        className="text-lg font-medium leading-6 text-gray-900"
+                                        className="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100"
                                     >
                                         {title}
                                     </Dialog.Title>

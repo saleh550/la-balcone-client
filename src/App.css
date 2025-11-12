@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @tailwind utilities;
+
+@custom-variant dark (&:where(.dark, .dark *));
 body {
   /* background-image: url('https://media1.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3dzJ5aXc5a2hib3NscHZxbmZ0bnhmcmFhMWh3bHM4anl3dzVuaXM4ZSZlcD12MV9naWZzX3RyZW5kaW5nJmN0PWc/ClissYbqdxpHxquUme/giphy.webp'); */
   background-size: cover;

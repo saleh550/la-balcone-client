@@ -1,9 +1,14 @@
 
 import LnaguageMenu from "../components/LanguageMenu";
+import ThemeToggle from "../components/ThemeToggle";
 export default function MenuHeader() {
 
   return (
-    <header dir="ltr" className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+    <header dir="ltr" className="    fixed top-0 left-0 w-full
+    bg-white/40 dark:bg-gray-800/40
+    backdrop-blur-lg
+    shadow-md
+    z-50">
       <div className="flex justify-between items-center px-6 py-3">
         {/* Left: Logo or Restaurant Name */}
         <div className="flex items-center gap-2">
@@ -12,7 +17,8 @@ export default function MenuHeader() {
             alt="Restaurant Logo"
             className="w-10 h-10 object-contain"
           />
-          <span className="font-semibold text-xl text-gray-800">
+          <span className="font-semibold text-xl text-gray-800 dark:text-gray-200
+          ">
             La Balcone
           </span>
         </div>
@@ -38,7 +44,11 @@ export default function MenuHeader() {
             </a>
           ))} */}
         </nav>
-         <LnaguageMenu/>
+        <div className="flex">
+ 
+          <ThemeToggle />
+          <LnaguageMenu />
+        </div>
       </div>
 
       {/* Mobile Dropdown Menu */}

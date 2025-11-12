@@ -27,7 +27,7 @@ const LnaguageMenu = () => {
       <Menu as="div" className="relative ">
         <div>
           <Menu.Button className=" p-2.5 text-gray-400 hover:text-gray-500">
-            <GrLanguage className="h-6 w-6" aria-hidden="true" /> 
+            <GrLanguage className="h-6 w-6 dark:text-gray-200 text-blue-500" aria-hidden="true" />
           </Menu.Button>
         </div>
         <Transition
@@ -39,15 +39,23 @@ const LnaguageMenu = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute z-50 right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
+          <Menu.Items className="    absolute z-50 right-0 mt-2 w-56 origin-top-right
+    divide-y divide-gray-200 dark:divide-gray-700
+    rounded-md
+    bg-white dark:bg-slate-800
+    shadow-lg ring-1 ring-black/5 focus:outline-none">
             <div className="px-1 py-1 ">
               <Menu.Item>
                 {({ active }) => (
                   <button
                     onClick={() => handleLanguageChange("en")}
-                    className={`${
-                      active ? "bg-amber-500 text-white" : "text-gray-900"
-                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    className={`
+    ${active 
+      ? "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white" 
+      : "text-gray-900 dark:text-gray-100"
+    }
+    group flex w-full items-center rounded-md px-2 py-2 text-sm transition-colors duration-200
+  `}
                   >
                     {active ? (
                       <Flag
@@ -98,9 +106,13 @@ const LnaguageMenu = () => {
                 {({ active }) => (
                   <button
                     onClick={() => handleLanguageChange("ar")}
-                    className={`${
-                      active ? "bg-amber-500 text-white" : "text-gray-900"
-                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    className={`
+    ${active
+                        ? "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white"
+                        : "text-gray-900 dark:text-gray-100"
+                      }
+    group flex w-full items-center rounded-md px-2 py-2 text-sm transition-colors duration-200
+  `}
                   >
                     {active ? (
                       <Flag
@@ -123,9 +135,13 @@ const LnaguageMenu = () => {
                 {({ active }) => (
                   <button
                     onClick={() => handleLanguageChange("he")}
-                    className={`${
-                      active ? "bg-amber-500 text-white" : "text-gray-900"
-                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    className={`
+                            ${active
+                        ? "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white"
+                        : "text-gray-900 dark:text-gray-100"
+                      }
+                         group flex w-full items-center rounded-md px-2 py-2 text-sm transition-colors duration-200
+                        `}
                   >
                     {active ? (
                       <Flag
