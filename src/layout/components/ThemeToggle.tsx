@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDarkMode } from "../../store/useDarkMode";
 
 const ThemeToggle: React.FC = () => {
-  const {setDarkMode}=useDarkMode();
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ||
-      (window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light")
+  const { setDarkMode } = useDarkMode();
+  const [theme, setTheme] = useState("dark"
   );
 
   useEffect(() => {
@@ -17,10 +13,11 @@ const ThemeToggle: React.FC = () => {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const toggleTheme = () =>{
+  const toggleTheme = () => {
     setDarkMode(theme === "dark" ? "light" : "dark");
-    
-    setTheme(theme === "dark" ? "light" : "dark");}
+
+    setTheme(theme === "dark" ? "light" : "dark");
+  }
 
   return (
     <button
