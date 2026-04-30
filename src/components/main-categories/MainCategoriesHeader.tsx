@@ -32,7 +32,7 @@ const MainCategoriesHeader: React.FC<MainCategoriesHeaderProps> = ({ children })
             viewport={{ once: true }}
             className="h-1 mt-4 mx-auto rounded-full bg-amber-600 shadow-md"
           /> */}
-          <Title title={"EXPLORE_OUR_MENU"} />
+          {/* <Title title={"EXPLORE_OUR_MENU"} /> */}
 
 
           <div className="mt-12">{children}</div>

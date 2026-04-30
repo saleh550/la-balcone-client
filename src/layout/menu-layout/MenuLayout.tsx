@@ -5,8 +5,10 @@ import MenuHeader from './MenuHeader'
 import { Outlet } from 'react-router-dom'
 import { useMainCategories } from '../../store/useMainCategories'
 import { getActiveCategories } from '../../utils/apisUtils'
-import darkbg from '../../assets/bgimages/dark.avif'
-import lightbg from '../../assets/bgimages/light.jpg'
+// import darkbg from '../../assets/bgimages/dark.avif'
+// import lightbg from '../../assets/bgimages/light.jpg'
+import darkbg from '../../assets/bgimages/labalcone-dark-bg.jpeg'
+import lightbg from '../../assets/bgimages/labalcone-light-bg.jpeg'
 import { useDarkMode } from '../../store/useDarkMode'
 const MenuLayout = () => {
   const [_isLoading, setIsLoading] = useState(false)

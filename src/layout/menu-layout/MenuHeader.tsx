@@ -1,8 +1,11 @@
 
 import LnaguageMenu from "../components/LanguageMenu";
 import ThemeToggle from "../components/ThemeToggle";
+import Logodark from "../../assets/icons/logo-without-bg1.png"
+import Logolight from "../../assets/icons/logo-bg-light.jpeg"
+import { useDarkMode } from "../../store/useDarkMode";
 export default function MenuHeader() {
-
+const { currentDarkMode } = useDarkMode();
   return (
     <header dir="ltr" className="    fixed top-0 left-0 w-full
     bg-white/40 dark:bg-gray-800/40
@@ -13,14 +16,15 @@ export default function MenuHeader() {
         {/* Left: Logo or Restaurant Name */}
         <div className="flex items-center gap-2">
           <img
-            src="https://cdn1.iconfinder.com/data/icons/food-drink-5/32/fast-food-256.png"
+            // src="https://cdn1.iconfinder.com/data/icons/food-drink-5/32/fast-food-256.png"
+            src={currentDarkMode!="dark"?Logodark:Logolight}
             alt="Restaurant Logo"
-            className="w-10 h-10 object-contain"
+            className="w-12 h-12 object-contain  rounded-full"
           />
-          <span className="font-semibold text-xl text-gray-800 dark:text-gray-200
+          {/* <span className="font-semibold text-xl text-gray-800 dark:text-gray-200
           ">
             La Balcone
-          </span>
+          </span> */}
         </div>
 
         {/* Right: Burger Icon (mobile) */}
