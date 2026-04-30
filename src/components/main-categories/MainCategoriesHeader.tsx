@@ -1,7 +1,7 @@
 import React from 'react'
 // import { motion } from "framer-motion";
 // import { useTranslation } from 'react-i18next';
-import Title from '../customs/Title';
+// import Title from '../customs/Title';
 interface MainCategoriesHeaderProps {
   // Add any props if needed in the future
   children: React.ReactNode;
