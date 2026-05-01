@@ -8,6 +8,7 @@ interface MainCategoriesHeaderProps {
 }
 const MainCategoriesHeader: React.FC<MainCategoriesHeaderProps> = ({ children }) => {
   // const { t } = useTranslation();
+  // const { t } = useTranslation();
   return (
     <div>
       <section className="py-16 bg-gradient-to-b  relative overflow-hidden">
