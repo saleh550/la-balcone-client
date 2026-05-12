@@ -77,5 +77,8 @@
   "PUBLISH_MENU_ITEM_QUESTION": "Are you sure you want to publish this menu item?",
   "UNPUBLISH_MENU_ITEM_TITLE": "Unpublish Menu Item",
   "UNPUBLISH_MENU_ITEM_QUESTION": "Are you sure you want to unpublish this menu item?",
-  "ADD_SUB_CATEGORY_FORM_TITLE": "Add Subcategory"
+  "ADD_SUB_CATEGORY_FORM_TITLE": "Add Subcategory",
+  "VEGAN": "Vegan",
+  "CONTAINS_MILK": "Contains Milk",
+  "CONTAINS_GLUTEN": "Contains Gluten"
 }

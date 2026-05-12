@@ -1,5 +1,6 @@
 
 import LnaguageMenu from "../../components/LanguageMenu";
+import ThemeToggle from "../../components/ThemeToggle";
 export default function MenuManagerHeader() {
 
   return (
@@ -19,6 +20,8 @@ export default function MenuManagerHeader() {
         <nav className="hidden md:flex gap-6">
 
         </nav>
+          <ThemeToggle />
+
          <LnaguageMenu/>
       </div>
     </header>

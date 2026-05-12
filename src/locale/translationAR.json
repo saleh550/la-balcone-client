@@ -77,5 +77,8 @@
   "PUBLISH_MENU_ITEM_QUESTION": "هل أنت متأكد أنك تريد نشر هذا العنصر في القائمة؟",
   "UNPUBLISH_MENU_ITEM_TITLE": "إلغاء نشر عنصر القائمة",
   "UNPUBLISH_MENU_ITEM_QUESTION": "هل أنت متأكد أنك تريد إلغاء نشر هذا العنصر في القائمة؟",
-  "ADD_SUB_CATEGORY_FORM_TITLE": "إضافة فئة فرعية"
+  "ADD_SUB_CATEGORY_FORM_TITLE": "إضافة فئة فرعية",
+  "VEGAN": "نباتي",
+  "CONTAINS_MILK": "يحتوي على الحليب",
+  "CONTAINS_GLUTEN": "يحتوي على الغلوتين"
 }
