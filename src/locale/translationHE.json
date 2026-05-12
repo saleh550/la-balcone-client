@@ -77,5 +77,8 @@
   "PUBLISH_MENU_ITEM_QUESTION": "האם אתה בטוח שברצונך לפרסם את פריט התפריט הזה?",
   "UNPUBLISH_MENU_ITEM_TITLE": "בטל פרסום פריט תפריט",
   "UNPUBLISH_MENU_ITEM_QUESTION": "האם אתה בטוח שברצונך לבטל את פרסום פריט התפריט הזה?",
-  "ADD_SUB_CATEGORY_FORM_TITLE": "הוסף תת־קטגוריה"
+  "ADD_SUB_CATEGORY_FORM_TITLE": "הוסף תת־קטגוריה",
+  "VEGAN": "טבעוני",
+  "CONTAINS_MILK": "מכיל חלב",
+  "CONTAINS_GLUTEN": "מכיל גלוטן"
 }

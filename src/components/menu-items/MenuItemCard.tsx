@@ -30,7 +30,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, index,
                     key={item.id}
                     whileHover={{ scale: 1.04 }}
                     whileTap={{ scale: 0.96 }}
-                    className="flex h-[120px] rounded-2xl overflow-hidden bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="flex h-[120px] rounded-2xl overflow-hidden bg-white dark:bg-gray-900/70 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                     {/* Image Section */}
                     <div className="w-1/3 h-full overflow-hidden">

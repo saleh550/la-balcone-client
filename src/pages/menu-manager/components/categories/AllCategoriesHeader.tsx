@@ -12,9 +12,9 @@ const AllCategoriesHeader = () => {
                     {t('MENU_MANAGENMENT_TITLE')} 🍽️
                 </h1>
                 <Title title='CATEGORIES_MANAGENMENT_TITLE' />
-                <p className="text-gray-500 max-w-2xl mx-auto pt-1">
+                {/* <p className="text-gray-500 max-w-2xl mx-auto pt-1">
                     {t('MENU_MANAGER_DESCRIPTION')}
-                </p>
+                </p> */}
             </div>
         </div>
     )

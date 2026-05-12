@@ -1,10 +1,9 @@
-
 import type { FC } from "react";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 const MenuManagerFooter: FC = () => {
-  const instagramUrl = "https://www.instagram.com/samerfa19"; // 🔁 change this
-  const facebookUrl = "https://www.facebook.com/YOUR_USERNAME"; // 🔁 change this
+  const instagramUrl = "https://www.instagram.com/balcon_coffee?igsh=MW5lOGtzNGsyZXg0ZQ=="; // 🔁 change this
+  // const facebookUrl = "https://www.facebook.com/YOUR_USERNAME"; // 🔁 change this
 
   return (
     <footer className="w-full bg-gray-100 py-6 mt-10">
@@ -19,19 +18,20 @@ const MenuManagerFooter: FC = () => {
           >
             <FaInstagram size={28} />
           </a>
-          <a
+          {/* <a
             href={facebookUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:text-blue-700 transition-transform transform hover:scale-110"
           >
             <FaFacebook size={28} />
-          </a>
+          </a> */}
         </div>
 
         {/* Footer Text */}
         <p className="text-sm text-gray-500">
-          © {new Date().getFullYear()} La Balcone Restaurant. All rights reserved.
+          © {new Date().getFullYear()} La Balcone Restaurant. All rights
+          reserved.
         </p>
       </div>
     </footer>
